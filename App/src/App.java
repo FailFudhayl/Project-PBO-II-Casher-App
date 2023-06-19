@@ -32,7 +32,6 @@ public class App extends javax.swing.JFrame {
     
     public void insertDataRiwayat(String timestamp, String produk, String jumlah, String harga_dibeli, String uang_tunai, String uang_kembali) {
         DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
-        int row = jTable2.getRowCount();
         model.addRow(new Object[] {
             timestamp,
             produk,
@@ -43,19 +42,19 @@ public class App extends javax.swing.JFrame {
         });
     }
     
-    private void deleteData() {
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        int rowSelected = jTable1.getSelectedRow();
+    // private void deleteData() {
+    //     DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+    //     int rowSelected = jTable1.getSelectedRow();
         
-        if (rowSelected >= 0) {
-            int confirm = JOptionPane.showConfirmDialog(this, "Anda yakin ingin menghapus baris ini?", "Konfirmasi", JOptionPane.YES_NO_OPTION);
-            if (confirm == JOptionPane.YES_OPTION) {
-                model.removeRow(rowSelected);
-            }
-        } else {
-            JOptionPane.showMessageDialog(this, "Tidak ada baris yang dipilih.", "Peringatan", JOptionPane.WARNING_MESSAGE);
-        }
-    }
+    //     if (rowSelected >= 0) {
+    //         int confirm = JOptionPane.showConfirmDialog(this, "Anda yakin ingin menghapus baris ini?", "Konfirmasi", JOptionPane.YES_NO_OPTION);
+    //         if (confirm == JOptionPane.YES_OPTION) {
+    //             model.removeRow(rowSelected);
+    //         }
+    //     } else {
+    //         JOptionPane.showMessageDialog(this, "Tidak ada baris yang dipilih.", "Peringatan", JOptionPane.WARNING_MESSAGE);
+    //     }
+    // }
     
     private void updateTotalHarga(String produk, String harga) {
         try {
